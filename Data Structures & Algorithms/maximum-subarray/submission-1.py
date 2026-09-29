@@ -1,0 +1,30 @@
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        
+
+        # nums = [2,-3,4,-2,2,1,-1,4]
+        
+        #   2 - 3 = -1
+        # 4-2 = 2
+        # 2+2 = 4
+        # 4 + 1= 5
+        # 5 - 1 = 4
+        # 4 + 4 = 8
+        
+
+        curSum = 0
+        maxSum = nums[0]
+
+        for n in nums:
+
+            curSum += n
+            maxSum = max(maxSum, curSum)
+
+            if curSum < 0:
+                curSum = 0
+            
+        return maxSum
+            
+
+
+
